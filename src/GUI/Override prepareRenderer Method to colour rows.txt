@@ -1,0 +1,13 @@
+	public Component prepareRenderer(TableCellRenderer renderer, int rowIndex, int vColIndex) {
+            Component c = super.prepareRenderer(renderer, rowIndex, vColIndex);
+            boolean result = Boolean.parseBoolean(this.getValueAt(rowIndex, this.getColumnCount() - 1).toString());
+	    
+            if (result == true) {
+                c.setForeground(Color.BLACK);
+            } else {
+                // If not shaded, match the table's background
+                c.setForeground(Color.ORANGE);
+            }
+            return c;
+        }
+	};  
